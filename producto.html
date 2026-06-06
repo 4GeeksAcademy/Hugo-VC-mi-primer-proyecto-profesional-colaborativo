@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Producto | ARCA Studio</title>
+    <meta
+      name="description"
+      content="Vista de producto de ARCA Studio. Cada tarjeta del catalogo abre su detalle especifico usando HTML + Tailwind."
+    />
+    <meta
+      name="keywords"
+      content="vista de producto, catalogo ropa, tienda online moda, ARCA Studio"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="ARCA Studio" />
+    <meta property="og:title" content="Producto | ARCA Studio" />
+    <meta
+      property="og:description"
+      content="Explora materiales, tallas y detalles del producto seleccionado desde el catalogo."
+    />
+    <meta property="og:type" content="website" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+      :root {
+        --sand: #f7f2eb;
+        --ink: #111111;
+        --brick: #c85a3f;
+        --forest: #2f5a45;
+      }
+
+      body {
+        font-family: "Space Grotesk", sans-serif;
+        background: radial-gradient(circle at 85% 0%, #f3e3d6 0%, #f7f2eb 42%, #efe7dd 100%);
+        color: var(--ink);
+      }
+
+      h1,
+      h2,
+      h3,
+      .brand-font {
+        font-family: "Syne", sans-serif;
+      }
+
+      .fade-up {
+        animation: fadeUp 520ms ease both;
+      }
+
+      .product-view {
+        display: none;
+      }
+
+      .product-view:target {
+        display: grid;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Vista de producto | ARCA Studio",
+        "description": "Detalle del producto seleccionado desde catalogo usando navegacion por hash.",
+        "url": "producto.html"
+      }
+    </script>
+  </head>
+
+  <body class="min-h-screen antialiased">
+    <a
+      href="#contenido-principal"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-black focus:px-4 focus:py-2 focus:text-white"
+      >Saltar al contenido principal</a
+    >
+
+    <header class="sticky top-0 z-40 border-b border-black/10 bg-[#f7f2eb]/95 backdrop-blur">
+      <div
+        class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:grid lg:grid-cols-[auto_1fr_auto] lg:gap-8"
+      >
+        <a href="index.html" class="brand-font text-2xl font-extrabold tracking-tight text-[var(--ink)]"
+          >ARCA<span class="text-[var(--brick)]">Studio</span></a
+        >
+
+        <form class="order-3 w-full lg:order-none" role="search" aria-label="Buscar productos">
+          <label for="search" class="sr-only">Buscar</label>
+          <div class="relative">
+            <input
+              id="search"
+              name="search"
+              type="search"
+              placeholder="Buscar productos, colecciones o categoria"
+              class="w-full rounded-full border border-black/20 bg-white px-5 py-3 text-sm shadow-sm outline-none ring-[var(--brick)]/30 transition focus:ring-4"
+            />
+            <button
+              type="submit"
+              class="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-[var(--ink)] px-4 py-2 text-xs font-semibold text-white"
+            >
+              Buscar
+            </button>
+          </div>
+        </form>
+
+        <nav aria-label="Cuenta de usuario y navegacion">
+          <ul class="flex items-center gap-2 sm:gap-3">
+            <li>
+              <a
+                href="index.html"
+                class="rounded-full border border-black/20 px-4 py-2 text-sm font-medium transition hover:border-[var(--brick)] hover:text-[var(--brick)]"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="catalogo.html"
+                class="rounded-full border border-black/20 px-4 py-2 text-sm font-medium transition hover:border-[var(--brick)] hover:text-[var(--brick)]"
+                >Catalogo</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="rounded-full border border-black/20 px-4 py-2 text-sm font-medium transition hover:border-[var(--brick)] hover:text-[var(--brick)]"
+                >Ingresar</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="rounded-full bg-[var(--forest)] px-4 py-2 text-sm font-semibold text-white transition hover:brightness-110"
+                >Mi cuenta</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido-principal" class="mx-auto max-w-7xl px-4 pb-16 pt-8 sm:px-6 lg:px-8 lg:pt-10">
+      <nav aria-label="Breadcrumb" class="fade-up mb-6 text-sm text-black/70">
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href="index.html" class="hover:text-[var(--brick)]">Home</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href="catalogo.html" class="hover:text-[var(--brick)]">Catalogo</a></li>
+          <li aria-hidden="true">/</li>
+          <li class="font-semibold text-black">Detalle</li>
+        </ol>
+      </nav>
+
+      <section class="fade-up mb-6 rounded-2xl border border-black/10 bg-white/80 p-5">
+        <h1 class="text-2xl font-extrabold sm:text-3xl">Detalle del producto</h1>
+        <p class="mt-2 text-sm text-black/70">
+          Explora cada prenda con informacion clara sobre tallas, materiales y recomendaciones de uso para elegir con confianza.
+        </p>
+      </section>
+
+      <div class="product-switcher space-y-10">
+        <section id="runner-nova" class="product-view fade-up grid gap-6 lg:grid-cols-2 lg:gap-10">
+          <article class="overflow-hidden rounded-3xl border border-black/10 bg-white p-3 sm:p-4"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1300&q=80" alt="Runner Nova rojo" class="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]" loading="eager" /></article>
+          <aside class="rounded-3xl border border-black/10 bg-white p-6"><h2 class="text-3xl font-extrabold">Runner Nova</h2><p class="mt-3 text-sm"><span class="font-semibold">Codigo:</span> ARCA-RN-001</p><p class="mt-1 text-sm"><span class="font-semibold">Talla:</span> 39-44</p><p class="mt-4 text-3xl font-extrabold">$129.00</p><label for="qty-rn" class="mt-5 block text-sm font-semibold">Cantidad</label><input id="qty-rn" type="number" min="1" value="1" class="mt-2 w-24 rounded-lg border border-black/20 px-3 py-2 text-sm" /><button type="button" class="mt-4 w-full rounded-xl bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white">Agregar al carrito</button><section class="mt-6 border-t border-black/10 pt-5"><h3 class="text-base font-bold">Descripcion detallada</h3><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Materiales:</span> Mesh tecnico transpirable y suela de goma de alto agarre.</p><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Uso recomendado:</span> Uso urbano diario, caminatas largas y looks casual deportivos.</p></section></aside>
+        </section>
+
+        <section id="overshirt-terra" class="product-view fade-up grid gap-6 lg:grid-cols-2 lg:gap-10"><article class="overflow-hidden rounded-3xl border border-black/10 bg-white p-3 sm:p-4"><img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1300&q=80" alt="Overshirt Terra" class="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]" loading="eager" /></article><aside class="rounded-3xl border border-black/10 bg-white p-6"><h2 class="text-3xl font-extrabold">Overshirt Terra</h2><p class="mt-3 text-sm"><span class="font-semibold">Codigo:</span> ARCA-OT-002</p><p class="mt-1 text-sm"><span class="font-semibold">Talla:</span> S a XL</p><p class="mt-4 text-3xl font-extrabold">$89.90</p><label for="qty-ot" class="mt-5 block text-sm font-semibold">Cantidad</label><input id="qty-ot" type="number" min="1" value="1" class="mt-2 w-24 rounded-lg border border-black/20 px-3 py-2 text-sm" /><button type="button" class="mt-4 w-full rounded-xl bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white">Agregar al carrito</button><section class="mt-6 border-t border-black/10 pt-5"><h3 class="text-base font-bold">Descripcion detallada</h3><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Materiales:</span> Algodon pesado con mezcla elastica para confort y estructura.</p><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Uso recomendado:</span> Capas de media estacion para oficina casual y salidas urbanas.</p></section></aside></section>
+        <section id="cargo-atlas" class="product-view fade-up grid gap-6 lg:grid-cols-2 lg:gap-10"><article class="overflow-hidden rounded-3xl border border-black/10 bg-white p-3 sm:p-4"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1300&q=80" alt="Cargo Atlas" class="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]" loading="eager" /></article><aside class="rounded-3xl border border-black/10 bg-white p-6"><h2 class="text-3xl font-extrabold">Cargo Atlas</h2><p class="mt-3 text-sm"><span class="font-semibold">Codigo:</span> ARCA-CA-003</p><p class="mt-1 text-sm"><span class="font-semibold">Talla:</span> 30 a 38</p><p class="mt-4 text-3xl font-extrabold">$99.00</p><label for="qty-ca" class="mt-5 block text-sm font-semibold">Cantidad</label><input id="qty-ca" type="number" min="1" value="1" class="mt-2 w-24 rounded-lg border border-black/20 px-3 py-2 text-sm" /><button type="button" class="mt-4 w-full rounded-xl bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white">Agregar al carrito</button><section class="mt-6 border-t border-black/10 pt-5"><h3 class="text-base font-bold">Descripcion detallada</h3><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Materiales:</span> Sarga de algodon resistente con refuerzos en costuras.</p><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Uso recomendado:</span> Jornadas largas, viajes y outfits urbanos funcionales.</p></section></aside></section>
+        <section id="cap-stride" class="product-view fade-up grid gap-6 lg:grid-cols-2 lg:gap-10"><article class="overflow-hidden rounded-3xl border border-black/10 bg-white p-3 sm:p-4"><img src="https://images.pexels.com/photos/1124465/pexels-photo-1124465.jpeg?auto=compress&cs=tinysrgb&w=1300" alt="Cap Stride" class="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]" loading="eager" /></article><aside class="rounded-3xl border border-black/10 bg-white p-6"><h2 class="text-3xl font-extrabold">Cap Stride</h2><p class="mt-3 text-sm"><span class="font-semibold">Codigo:</span> ARCA-CS-004</p><p class="mt-1 text-sm"><span class="font-semibold">Talla:</span> Unica</p><p class="mt-4 text-3xl font-extrabold">$34.00</p><label for="qty-cs4" class="mt-5 block text-sm font-semibold">Cantidad</label><input id="qty-cs4" type="number" min="1" value="1" class="mt-2 w-24 rounded-lg border border-black/20 px-3 py-2 text-sm" /><button type="button" class="mt-4 w-full rounded-xl bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white">Agregar al carrito</button><section class="mt-6 border-t border-black/10 pt-5"><h3 class="text-base font-bold">Descripcion detallada</h3><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Materiales:</span> Algodon twill con cierre ajustable trasero.</p><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Uso recomendado:</span> Looks casuales de diario, exterior y viajes cortos.</p></section></aside></section>
+        <section id="shell-night" class="product-view fade-up grid gap-6 lg:grid-cols-2 lg:gap-10"><article class="overflow-hidden rounded-3xl border border-black/10 bg-white p-3 sm:p-4"><img src="https://images.unsplash.com/photo-1521223890158-f9f7c3d5d504?auto=format&fit=crop&w=1300&q=80" alt="Shell Night" class="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]" loading="eager" /></article><aside class="rounded-3xl border border-black/10 bg-white p-6"><h2 class="text-3xl font-extrabold">Shell Night</h2><p class="mt-3 text-sm"><span class="font-semibold">Codigo:</span> ARCA-SN-005</p><p class="mt-1 text-sm"><span class="font-semibold">Talla:</span> S a XL</p><p class="mt-4 text-3xl font-extrabold">$149.00</p><label for="qty-sn" class="mt-5 block text-sm font-semibold">Cantidad</label><input id="qty-sn" type="number" min="1" value="1" class="mt-2 w-24 rounded-lg border border-black/20 px-3 py-2 text-sm" /><button type="button" class="mt-4 w-full rounded-xl bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white">Agregar al carrito</button><section class="mt-6 border-t border-black/10 pt-5"><h3 class="text-base font-bold">Descripcion detallada</h3><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Materiales:</span> Tejido tecnico repelente a salpicaduras y forro suave interno.</p><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Uso recomendado:</span> Clima fresco, traslados urbanos y fines de semana activos.</p></section></aside></section>
+        <section id="hood-core" class="product-view fade-up grid gap-6 lg:grid-cols-2 lg:gap-10"><article class="overflow-hidden rounded-3xl border border-black/10 bg-white p-3 sm:p-4"><img src="https://images.unsplash.com/photo-1548883354-94bcfe321cbb?auto=format&fit=crop&w=1300&q=80" alt="Hood Core" class="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]" loading="eager" /></article><aside class="rounded-3xl border border-black/10 bg-white p-6"><h2 class="text-3xl font-extrabold">Hood Core</h2><p class="mt-3 text-sm"><span class="font-semibold">Codigo:</span> ARCA-HC-006</p><p class="mt-1 text-sm"><span class="font-semibold">Talla:</span> S a XL</p><p class="mt-4 text-3xl font-extrabold">$79.00</p><label for="qty-hc" class="mt-5 block text-sm font-semibold">Cantidad</label><input id="qty-hc" type="number" min="1" value="1" class="mt-2 w-24 rounded-lg border border-black/20 px-3 py-2 text-sm" /><button type="button" class="mt-4 w-full rounded-xl bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white">Agregar al carrito</button><section class="mt-6 border-t border-black/10 pt-5"><h3 class="text-base font-bold">Descripcion detallada</h3><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Materiales:</span> Felpa de algodon peinado con interior afelpado ligero.</p><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Uso recomendado:</span> Dias frescos, estudio, trabajo remoto y uso casual diario.</p></section></aside></section>
+        <section id="mono-white" class="product-view fade-up grid gap-6 lg:grid-cols-2 lg:gap-10"><article class="overflow-hidden rounded-3xl border border-black/10 bg-white p-3 sm:p-4"><img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=1300&q=80" alt="Mono White" class="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]" loading="eager" /></article><aside class="rounded-3xl border border-black/10 bg-white p-6"><h2 class="text-3xl font-extrabold">Mono White</h2><p class="mt-3 text-sm"><span class="font-semibold">Codigo:</span> ARCA-MW-007</p><p class="mt-1 text-sm"><span class="font-semibold">Talla:</span> 39-44</p><p class="mt-4 text-3xl font-extrabold">$115.00</p><label for="qty-mw" class="mt-5 block text-sm font-semibold">Cantidad</label><input id="qty-mw" type="number" min="1" value="1" class="mt-2 w-24 rounded-lg border border-black/20 px-3 py-2 text-sm" /><button type="button" class="mt-4 w-full rounded-xl bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white">Agregar al carrito</button><section class="mt-6 border-t border-black/10 pt-5"><h3 class="text-base font-bold">Descripcion detallada</h3><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Materiales:</span> Upper sintetico premium y plantilla de espuma de memoria.</p><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Uso recomendado:</span> Oficina casual, salidas de fin de semana y eventos relajados.</p></section></aside></section>
+        <section id="straight-graphite" class="product-view fade-up grid gap-6 lg:grid-cols-2 lg:gap-10"><article class="overflow-hidden rounded-3xl border border-black/10 bg-white p-3 sm:p-4"><img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?auto=format&fit=crop&w=1300&q=80" alt="Straight Graphite" class="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]" loading="eager" /></article><aside class="rounded-3xl border border-black/10 bg-white p-6"><h2 class="text-3xl font-extrabold">Straight Graphite</h2><p class="mt-3 text-sm"><span class="font-semibold">Codigo:</span> ARCA-SG-008</p><p class="mt-1 text-sm"><span class="font-semibold">Talla:</span> 30 a 38</p><p class="mt-4 text-3xl font-extrabold">$84.00</p><label for="qty-sg" class="mt-5 block text-sm font-semibold">Cantidad</label><input id="qty-sg" type="number" min="1" value="1" class="mt-2 w-24 rounded-lg border border-black/20 px-3 py-2 text-sm" /><button type="button" class="mt-4 w-full rounded-xl bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white">Agregar al carrito</button><section class="mt-6 border-t border-black/10 pt-5"><h3 class="text-base font-bold">Descripcion detallada</h3><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Materiales:</span> Mezcla de algodon y elastano con acabado grafito mate.</p><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Uso recomendado:</span> Jornadas de oficina, reuniones y salidas informales.</p></section></aside></section>
+        <section id="crossline-bag" class="product-view fade-up grid gap-6 lg:grid-cols-2 lg:gap-10"><article class="overflow-hidden rounded-3xl border border-black/10 bg-white p-3 sm:p-4"><img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=1300&q=80" alt="Crossline Bag" class="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]" loading="eager" /></article><aside class="rounded-3xl border border-black/10 bg-white p-6"><h2 class="text-3xl font-extrabold">Crossline Bag</h2><p class="mt-3 text-sm"><span class="font-semibold">Codigo:</span> ARCA-CB-009</p><p class="mt-1 text-sm"><span class="font-semibold">Talla:</span> Unica</p><p class="mt-4 text-3xl font-extrabold">$54.00</p><label for="qty-cb" class="mt-5 block text-sm font-semibold">Cantidad</label><input id="qty-cb" type="number" min="1" value="1" class="mt-2 w-24 rounded-lg border border-black/20 px-3 py-2 text-sm" /><button type="button" class="mt-4 w-full rounded-xl bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white">Agregar al carrito</button><section class="mt-6 border-t border-black/10 pt-5"><h3 class="text-base font-bold">Descripcion detallada</h3><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Materiales:</span> Nylon tecnico y correas reforzadas con hebillas metalicas.</p><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Uso recomendado:</span> Traslados diarios, festivales y viajes de un dia.</p></section></aside></section>
+        <section id="linen-sand" class="product-view fade-up grid gap-6 lg:grid-cols-2 lg:gap-10"><article class="overflow-hidden rounded-3xl border border-black/10 bg-white p-3 sm:p-4"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1300&q=80" alt="Linen Sand" class="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]" loading="eager" /></article><aside class="rounded-3xl border border-black/10 bg-white p-6"><h2 class="text-3xl font-extrabold">Linen Sand</h2><p class="mt-3 text-sm"><span class="font-semibold">Codigo:</span> ARCA-LS-010</p><p class="mt-1 text-sm"><span class="font-semibold">Talla:</span> S a XL</p><p class="mt-4 text-3xl font-extrabold">$68.00</p><label for="qty-ls" class="mt-5 block text-sm font-semibold">Cantidad</label><input id="qty-ls" type="number" min="1" value="1" class="mt-2 w-24 rounded-lg border border-black/20 px-3 py-2 text-sm" /><button type="button" class="mt-4 w-full rounded-xl bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white">Agregar al carrito</button><section class="mt-6 border-t border-black/10 pt-5"><h3 class="text-base font-bold">Descripcion detallada</h3><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Materiales:</span> Lino natural y algodon ligero de alta ventilacion.</p><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Uso recomendado:</span> Clima calido, vacaciones y eventos al aire libre.</p></section></aside></section>
+        <section id="trail-dust" class="product-view fade-up grid gap-6 lg:grid-cols-2 lg:gap-10"><article class="overflow-hidden rounded-3xl border border-black/10 bg-white p-3 sm:p-4"><img src="https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=1300&q=80" alt="Trail Dust" class="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]" loading="eager" /></article><aside class="rounded-3xl border border-black/10 bg-white p-6"><h2 class="text-3xl font-extrabold">Trail Dust</h2><p class="mt-3 text-sm"><span class="font-semibold">Codigo:</span> ARCA-TD-011</p><p class="mt-1 text-sm"><span class="font-semibold">Talla:</span> 39-44</p><p class="mt-4 text-3xl font-extrabold">$139.00</p><label for="qty-td" class="mt-5 block text-sm font-semibold">Cantidad</label><input id="qty-td" type="number" min="1" value="1" class="mt-2 w-24 rounded-lg border border-black/20 px-3 py-2 text-sm" /><button type="button" class="mt-4 w-full rounded-xl bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white">Agregar al carrito</button><section class="mt-6 border-t border-black/10 pt-5"><h3 class="text-base font-bold">Descripcion detallada</h3><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Materiales:</span> Cuero sintetico de alta resistencia y suela dentada de caucho.</p><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Uso recomendado:</span> Caminatas urbanas, lluvia ligera y fines de semana activos.</p></section></aside></section>
+        <section id="urban-chino" class="product-view fade-up grid gap-6 lg:grid-cols-2 lg:gap-10"><article class="overflow-hidden rounded-3xl border border-black/10 bg-white p-3 sm:p-4"><img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=1300&q=80" alt="Urban Chino" class="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]" loading="eager" /></article><aside class="rounded-3xl border border-black/10 bg-white p-6"><h2 class="text-3xl font-extrabold">Urban Chino</h2><p class="mt-3 text-sm"><span class="font-semibold">Codigo:</span> ARCA-UC-012</p><p class="mt-1 text-sm"><span class="font-semibold">Talla:</span> 30 a 38</p><p class="mt-4 text-3xl font-extrabold">$76.00</p><label for="qty-uc" class="mt-5 block text-sm font-semibold">Cantidad</label><input id="qty-uc" type="number" min="1" value="1" class="mt-2 w-24 rounded-lg border border-black/20 px-3 py-2 text-sm" /><button type="button" class="mt-4 w-full rounded-xl bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white">Agregar al carrito</button><section class="mt-6 border-t border-black/10 pt-5"><h3 class="text-base font-bold">Descripcion detallada</h3><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Materiales:</span> Algodon stretch con terminado suave antiarrugas.</p><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Uso recomendado:</span> Oficina, clases y combinaciones smart-casual.</p></section></aside></section>
+        <section id="blazer-motion" class="product-view fade-up grid gap-6 lg:grid-cols-2 lg:gap-10"><article class="overflow-hidden rounded-3xl border border-black/10 bg-white p-3 sm:p-4"><img src="https://images.unsplash.com/photo-1560243563-062bfc001d68?auto=format&fit=crop&w=1300&q=80" alt="Blazer Motion" class="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]" loading="eager" /></article><aside class="rounded-3xl border border-black/10 bg-white p-6"><h2 class="text-3xl font-extrabold">Blazer Motion</h2><p class="mt-3 text-sm"><span class="font-semibold">Codigo:</span> ARCA-BM-013</p><p class="mt-1 text-sm"><span class="font-semibold">Talla:</span> S a XL</p><p class="mt-4 text-3xl font-extrabold">$159.00</p><label for="qty-bm" class="mt-5 block text-sm font-semibold">Cantidad</label><input id="qty-bm" type="number" min="1" value="1" class="mt-2 w-24 rounded-lg border border-black/20 px-3 py-2 text-sm" /><button type="button" class="mt-4 w-full rounded-xl bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white">Agregar al carrito</button><section class="mt-6 border-t border-black/10 pt-5"><h3 class="text-base font-bold">Descripcion detallada</h3><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Materiales:</span> Mezcla de lana fria y fibras tecnicas de elasticidad media.</p><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Uso recomendado:</span> Reuniones, eventos formales relajados y trabajo hibrido.</p></section></aside></section>
+        <section id="belt-terra" class="product-view fade-up grid gap-6 lg:grid-cols-2 lg:gap-10"><article class="overflow-hidden rounded-3xl border border-black/10 bg-white p-3 sm:p-4"><img src="https://images.pexels.com/photos/45055/pexels-photo-45055.jpeg?auto=compress&cs=tinysrgb&w=1300" alt="Belt Terra" class="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]" loading="eager" /></article><aside class="rounded-3xl border border-black/10 bg-white p-6"><h2 class="text-3xl font-extrabold">Belt Terra</h2><p class="mt-3 text-sm"><span class="font-semibold">Codigo:</span> ARCA-BT-014</p><p class="mt-1 text-sm"><span class="font-semibold">Talla:</span> Unica</p><p class="mt-4 text-3xl font-extrabold">$42.00</p><label for="qty-bt" class="mt-5 block text-sm font-semibold">Cantidad</label><input id="qty-bt" type="number" min="1" value="1" class="mt-2 w-24 rounded-lg border border-black/20 px-3 py-2 text-sm" /><button type="button" class="mt-4 w-full rounded-xl bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white">Agregar al carrito</button><section class="mt-6 border-t border-black/10 pt-5"><h3 class="text-base font-bold">Descripcion detallada</h3><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Materiales:</span> Cuero tratado de grano fino y hebilla de acero cepillado.</p><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Uso recomendado:</span> Looks formales y casuales con jeans o pantalon sastre.</p></section></aside></section>
+        <section id="pulse-runner" class="product-view fade-up grid gap-6 lg:grid-cols-2 lg:gap-10"><article class="overflow-hidden rounded-3xl border border-black/10 bg-white p-3 sm:p-4"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1300&q=80" alt="Pulse Runner" class="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]" loading="eager" /></article><aside class="rounded-3xl border border-black/10 bg-white p-6"><h2 class="text-3xl font-extrabold">Pulse Runner</h2><p class="mt-3 text-sm"><span class="font-semibold">Codigo:</span> ARCA-PR-015</p><p class="mt-1 text-sm"><span class="font-semibold">Talla:</span> 39-44</p><p class="mt-4 text-3xl font-extrabold">$119.00</p><label for="qty-pr" class="mt-5 block text-sm font-semibold">Cantidad</label><input id="qty-pr" type="number" min="1" value="1" class="mt-2 w-24 rounded-lg border border-black/20 px-3 py-2 text-sm" /><button type="button" class="mt-4 w-full rounded-xl bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white">Agregar al carrito</button><section class="mt-6 border-t border-black/10 pt-5"><h3 class="text-base font-bold">Descripcion detallada</h3><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Materiales:</span> Upper textil ligero con entresuela de amortiguacion reactiva.</p><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Uso recomendado:</span> Caminatas rapidas, rutina urbana y entreno suave.</p></section></aside></section>
+        <section id="transit-bomber" class="product-view fade-up grid gap-6 lg:grid-cols-2 lg:gap-10"><article class="overflow-hidden rounded-3xl border border-black/10 bg-white p-3 sm:p-4"><img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=1300&q=80" alt="Transit Bomber" class="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]" loading="eager" /></article><aside class="rounded-3xl border border-black/10 bg-white p-6"><h2 class="text-3xl font-extrabold">Transit Bomber</h2><p class="mt-3 text-sm"><span class="font-semibold">Codigo:</span> ARCA-TB-016</p><p class="mt-1 text-sm"><span class="font-semibold">Talla:</span> S a XL</p><p class="mt-4 text-3xl font-extrabold">$152.00</p><label for="qty-tb" class="mt-5 block text-sm font-semibold">Cantidad</label><input id="qty-tb" type="number" min="1" value="1" class="mt-2 w-24 rounded-lg border border-black/20 px-3 py-2 text-sm" /><button type="button" class="mt-4 w-full rounded-xl bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white">Agregar al carrito</button><section class="mt-6 border-t border-black/10 pt-5"><h3 class="text-base font-bold">Descripcion detallada</h3><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Materiales:</span> Nylon mate de alta densidad y forro interno termico ligero.</p><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Uso recomendado:</span> Entretiempo, movilidad urbana y salidas nocturnas.</p></section></aside></section>
+        <section id="office-pleat" class="product-view fade-up grid gap-6 lg:grid-cols-2 lg:gap-10"><article class="overflow-hidden rounded-3xl border border-black/10 bg-white p-3 sm:p-4"><img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1300&q=80" alt="Office Pleat" class="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]" loading="eager" /></article><aside class="rounded-3xl border border-black/10 bg-white p-6"><h2 class="text-3xl font-extrabold">Office Pleat</h2><p class="mt-3 text-sm"><span class="font-semibold">Codigo:</span> ARCA-OP-017</p><p class="mt-1 text-sm"><span class="font-semibold">Talla:</span> 30 a 38</p><p class="mt-4 text-3xl font-extrabold">$82.00</p><label for="qty-op" class="mt-5 block text-sm font-semibold">Cantidad</label><input id="qty-op" type="number" min="1" value="1" class="mt-2 w-24 rounded-lg border border-black/20 px-3 py-2 text-sm" /><button type="button" class="mt-4 w-full rounded-xl bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white">Agregar al carrito</button><section class="mt-6 border-t border-black/10 pt-5"><h3 class="text-base font-bold">Descripcion detallada</h3><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Materiales:</span> Tejido de sastreria con porcentaje elastico para movimiento.</p><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Uso recomendado:</span> Entornos profesionales, presentaciones y cenas formales.</p></section></aside></section>
+        <section id="classic-tote" class="product-view fade-up grid gap-6 lg:grid-cols-2 lg:gap-10"><article class="overflow-hidden rounded-3xl border border-black/10 bg-white p-3 sm:p-4"><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1300&q=80" alt="Classic Tote" class="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]" loading="eager" /></article><aside class="rounded-3xl border border-black/10 bg-white p-6"><h2 class="text-3xl font-extrabold">Classic Tote</h2><p class="mt-3 text-sm"><span class="font-semibold">Codigo:</span> ARCA-CT-018</p><p class="mt-1 text-sm"><span class="font-semibold">Talla:</span> Unica</p><p class="mt-4 text-3xl font-extrabold">$88.00</p><label for="qty-ct" class="mt-5 block text-sm font-semibold">Cantidad</label><input id="qty-ct" type="number" min="1" value="1" class="mt-2 w-24 rounded-lg border border-black/20 px-3 py-2 text-sm" /><button type="button" class="mt-4 w-full rounded-xl bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white">Agregar al carrito</button><section class="mt-6 border-t border-black/10 pt-5"><h3 class="text-base font-bold">Descripcion detallada</h3><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Materiales:</span> Cuero suave con interior forrado y asas reforzadas.</p><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Uso recomendado:</span> Oficina, universidad y salidas de ciudad.</p></section></aside></section>
+        <section id="cloud-step" class="product-view fade-up grid gap-6 lg:grid-cols-2 lg:gap-10"><article class="overflow-hidden rounded-3xl border border-black/10 bg-white p-3 sm:p-4"><img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=1300&q=80" alt="Cloud Step" class="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]" loading="eager" /></article><aside class="rounded-3xl border border-black/10 bg-white p-6"><h2 class="text-3xl font-extrabold">Cloud Step</h2><p class="mt-3 text-sm"><span class="font-semibold">Codigo:</span> ARCA-CS-019</p><p class="mt-1 text-sm"><span class="font-semibold">Talla:</span> 39-44</p><p class="mt-4 text-3xl font-extrabold">$124.00</p><label for="qty-cs19" class="mt-5 block text-sm font-semibold">Cantidad</label><input id="qty-cs19" type="number" min="1" value="1" class="mt-2 w-24 rounded-lg border border-black/20 px-3 py-2 text-sm" /><button type="button" class="mt-4 w-full rounded-xl bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white">Agregar al carrito</button><section class="mt-6 border-t border-black/10 pt-5"><h3 class="text-base font-bold">Descripcion detallada</h3><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Materiales:</span> Tejido knit transpirable y suela EVA de alta ligereza.</p><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Uso recomendado:</span> Uso diario intensivo, caminatas y viajes urbanos.</p></section></aside></section>
+        <section id="daily-layer" class="product-view fade-up grid gap-6 lg:grid-cols-2 lg:gap-10"><article class="overflow-hidden rounded-3xl border border-black/10 bg-white p-3 sm:p-4"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1300&q=80" alt="Daily Layer" class="h-[360px] w-full rounded-2xl object-cover sm:h-[520px]" loading="eager" /></article><aside class="rounded-3xl border border-black/10 bg-white p-6"><h2 class="text-3xl font-extrabold">Daily Layer</h2><p class="mt-3 text-sm"><span class="font-semibold">Codigo:</span> ARCA-DL-020</p><p class="mt-1 text-sm"><span class="font-semibold">Talla:</span> S a XL</p><p class="mt-4 text-3xl font-extrabold">$74.00</p><label for="qty-dl" class="mt-5 block text-sm font-semibold">Cantidad</label><input id="qty-dl" type="number" min="1" value="1" class="mt-2 w-24 rounded-lg border border-black/20 px-3 py-2 text-sm" /><button type="button" class="mt-4 w-full rounded-xl bg-[var(--ink)] px-5 py-3 text-sm font-semibold text-white">Agregar al carrito</button><section class="mt-6 border-t border-black/10 pt-5"><h3 class="text-base font-bold">Descripcion detallada</h3><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Materiales:</span> Jersey de algodon suave con acabado lavado natural.</p><p class="mt-2 text-sm text-black/75"><span class="font-semibold">Uso recomendado:</span> Base para looks por capas, diario y clima templado.</p></section></aside></section>
+      </div>
+    </main>
+
+    <footer class="border-t border-black/10 bg-[#17120f] text-white">
+      <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+        <section aria-labelledby="footer-brand">
+          <h2 id="footer-brand" class="brand-font text-xl font-extrabold">ARCA Studio</h2>
+          <p class="mt-3 text-sm text-white/75">
+            Moda esencial con foco en silueta, textura y durabilidad para uso diario.
+          </p>
+        </section>
+
+        <nav aria-labelledby="footer-categorias">
+          <h2 id="footer-categorias" class="text-sm font-semibold uppercase tracking-wide text-white/85">Categorias</h2>
+          <ul class="mt-4 space-y-2 text-sm text-white/80">
+            <li><a href="#" class="hover:text-white">Calzado</a></li>
+            <li><a href="#" class="hover:text-white">Camisas</a></li>
+            <li><a href="#" class="hover:text-white">Pantalones</a></li>
+            <li><a href="#" class="hover:text-white">Accesorios</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-labelledby="footer-legal">
+          <h2 id="footer-legal" class="text-sm font-semibold uppercase tracking-wide text-white/85">Legal</h2>
+          <ul class="mt-4 space-y-2 text-sm text-white/80">
+            <li><a href="#" class="hover:text-white">Terminos y condiciones</a></li>
+            <li><a href="#" class="hover:text-white">Politica de privacidad</a></li>
+            <li><a href="#" class="hover:text-white">Sobre la marca</a></li>
+          </ul>
+        </nav>
+
+        <section aria-labelledby="footer-contacto">
+          <h2 id="footer-contacto" class="text-sm font-semibold uppercase tracking-wide text-white/85">Contacto</h2>
+          <ul class="mt-4 space-y-2 text-sm text-white/80">
+            <li>soporte@arcastudio.com</li>
+            <li>+34 900 000 123</li>
+            <li>Calle Gran Via 100, Madrid</li>
+            <li>Lun - Vie: 9:00 a 18:00</li>
+          </ul>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>
