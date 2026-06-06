@@ -78,6 +78,25 @@
           >ARCA<span class="text-[var(--brick)]">Studio</span></a
         >
 
+        <form class="order-3 w-full lg:order-none" role="search" aria-label="Buscar productos">
+          <label for="search" class="sr-only">Buscar</label>
+          <div class="relative">
+            <input
+              id="search"
+              name="search"
+              type="search"
+              placeholder="Buscar productos, colecciones o categoria"
+              class="w-full rounded-full border border-black/20 bg-white px-5 py-3 text-sm shadow-sm outline-none ring-[var(--brick)]/30 transition focus:ring-4"
+            />
+            <button
+              type="submit"
+              class="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-[var(--ink)] px-4 py-2 text-xs font-semibold text-white"
+            >
+              Buscar
+            </button>
+          </div>
+        </form>
+
         <nav aria-label="Cuenta de usuario y navegacion">
           <ul class="flex items-center gap-2 sm:gap-3">
             <li>
@@ -193,12 +212,12 @@
             </div>
           </dl>
 
-          <button
-            type="button"
-            class="mt-5 w-full rounded-xl bg-[var(--ink)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-black"
+          <a
+            href="checkout.html"
+            class="mt-5 block w-full rounded-xl bg-[var(--ink)] px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-black"
           >
             Comprar
-          </button>
+          </a>
         </aside>
       </section>
     </main>
